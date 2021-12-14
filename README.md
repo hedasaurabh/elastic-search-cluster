@@ -64,6 +64,38 @@ NAME                                           READY   AGE
 statefulset.apps/elasticsearch-picnic-master   3/3     131m
 ```
 
+You can now setup a port forward to query Elasticsearch API:
+
+```
+[Saurabh MacBook-new] # kubectl port-forward svc/elasticsearch-picnic-master 9200 &
+[1] 16093
+Forwarding from 127.0.0.1:9200 -> 9200
+Forwarding from [::1]:9200 -> 9200
+```
+
+To gauge the cluster health & general info on the cluster you use below command:
+```
+[Saurabh MacBook-new] # curl -XGET 'localhost:9200/_cluster/health?pretty'
+Handling connection for 9200
+{
+  "cluster_name" : "elasticsearch-picnic",
+  "status" : "green",
+  "timed_out" : false,
+  "number_of_nodes" : 3,
+  "number_of_data_nodes" : 3,
+  "active_primary_shards" : 1,
+  "active_shards" : 2,
+  "relocating_shards" : 0,
+  "initializing_shards" : 0,
+  "unassigned_shards" : 0,
+  "delayed_unassigned_shards" : 0,
+  "number_of_pending_tasks" : 0,
+  "number_of_in_flight_fetch" : 0,
+  "task_max_waiting_in_queue_millis" : 0,
+  "active_shards_percent_as_number" : 100.0
+}
+```
+
 To access the ES cluster, elastic user password is required. You can use below command to retrieve the password:
 
 ```
