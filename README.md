@@ -1,7 +1,25 @@
 # Elasticsearch Cluster Helm Chart
 
 
-This Helm chart is a way to configure and run Elastic Search Cluster. We can also use Elastic Cloud on Kubernetes which is based on Operator pattern and is Elastic recommended way to deploy Elasticsearch. 
+This Helm chart is a way to configure and run Elastic Search Cluster. This would deploy a multi node ES cluster that would ensure availability if any K8s node fails. All the ES roles are assigned to all the nodes in the cluster. 
+
+ES cluster requires Persistent Volume (PV) to store the Elasticsearch data. This solution has been tested with Amazon EKS cluster, this is the reason the storageclass is defined as `gp2`. 
+
+This can be changed by updating the storageclass name in values.yaml file.
+```
+volumeClaimTemplate:
+  accessModes: ["ReadWriteOnce"]
+  storageClassName: "gp2"
+  resources:
+    requests:
+      storage: 30Gi
+```
+
+We can also use Elastic Cloud on Kubernetes which is based on Operator pattern and is Elastic recommended way to deploy Elasticsearch. 
+
+## Future Scope:
+
+We can use continous delivery tool like ArgoCD or FluxCD to deploy the helm chart on the cluster. These tools are based on GitOps principles which will automatically apply the changes to the desired state.
 
 
 - [Requirements](#requirements)
