@@ -28,7 +28,9 @@ esMajorVersion: ""
 
 # Allows you to add any config files in /usr/share/elasticsearch/config/
 # such as elasticsearch.yml and log4j2.properties
-esConfig: {}
+esConfig:
+  elasticsearch.yml: |
+    xpack.security.enabled: false
 #  elasticsearch.yml: |
 #    key:
 #      nestedkey: value
@@ -345,7 +347,7 @@ networkPolicy:
     #             - frontend
 
 tests:
-  enabled: true
+  enabled: false
 
 # Deprecated
 # please use the above podSecurityContext.fsGroup instead
