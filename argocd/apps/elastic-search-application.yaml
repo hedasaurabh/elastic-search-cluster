@@ -1,0 +1,14 @@
+project: default
+source:
+  repoURL: 'https://github.com/hedasaurabh/elastic-search-cluster'
+  path: .
+  targetRevision: HEAD
+  helm:
+    valueFiles:
+      - values.yaml
+destination:
+  server: 'https://kubernetes.default.svc'
+  namespace: argocd-elastic-search
+syncPolicy:
+  syncOptions:
+    - CreateNamespace=true
