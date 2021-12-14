@@ -4,41 +4,12 @@
 This Helm chart is a lightweight way to configure and run our official
 [Elasticsearch Docker image][].
 
-<!-- development warning placeholder -->
-**Warning**: This branch is used for development, please use the latest [7.x][] release for released version.
-
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
 
 - [Requirements](#requirements)
 - [Installing](#installing)
   - [Install released version using Helm repository](#install-released-version-using-helm-repository)
   - [Install development version using main branch](#install-development-version-using-main-branch)
-- [Upgrading](#upgrading)
-- [Usage notes](#usage-notes)
-- [Configuration](#configuration)
-  - [Deprecated](#deprecated)
-- [FAQ](#faq)
-  - [How to deploy this chart on a specific K8S distribution?](#how-to-deploy-this-chart-on-a-specific-k8s-distribution)
-  - [How to deploy dedicated nodes types?](#how-to-deploy-dedicated-nodes-types)
-    - [Coordinating nodes](#coordinating-nodes)
-    - [Clustering and Node Discovery](#clustering-and-node-discovery)
-  - [How to deploy clusters with security (authentication and TLS) enabled?](#how-to-deploy-clusters-with-security-authentication-and-tls-enabled)
-  - [How to migrate from helm/charts stable chart?](#how-to-migrate-from-helmcharts-stable-chart)
-  - [How to install plugins?](#how-to-install-plugins)
-  - [How to use the keystore?](#how-to-use-the-keystore)
-    - [Basic example](#basic-example)
-    - [Multiple keys](#multiple-keys)
-    - [Custom paths and keys](#custom-paths-and-keys)
-  - [How to enable snapshotting?](#how-to-enable-snapshotting)
-  - [How to configure templates post-deployment?](#how-to-configure-templates-post-deployment)
 - [Contributing](#contributing)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-<!-- Use this to update TOC: -->
-<!-- docker run --rm -it -v $(pwd):/usr/src jorgeandrada/doctoc --github -->
-
 
 ## Requirements
 
@@ -49,9 +20,6 @@ default settings. All of these settings are configurable.
   * Three Kubernetes nodes to respect the default "hard" affinity settings
   * 1GB of RAM for the JVM heap
 
-See [supported configurations][] for more details.
-
-
 ## Installing
 
 ### Install released version using Helm repository
@@ -60,9 +28,7 @@ See [supported configurations][] for more details.
 `helm repo add elastic https://helm.elastic.co`
 
 * Install it:
-  - with Helm 3: `helm install elasticsearch elastic/elasticsearch`
-  - with Helm 2 (deprecated): `helm install --name elasticsearch elastic/elasticsearch`
-
+  - with Helm 3: `helm install elasticsearch-picnic .`
 
 ### Install development version using main branch
 
