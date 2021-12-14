@@ -28,7 +28,7 @@ default settings. All of these settings are configurable.
 
 ## Configuration
 
-All the configuration parameters to customized the Elastic Search cluster deployment can be found here: https://github.com/elastic/helm-charts/tree/main/elasticsearch#configuration
+All the configuration parameters to customized the Elastic Search cluster deployment can be found [here](https://github.com/elastic/helm-charts/tree/main/elasticsearch#configuration): 
 
 | Parameter                          | Description                                                                                                                                                                                                                                                                                                       | Default                                          |
 |------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------|
