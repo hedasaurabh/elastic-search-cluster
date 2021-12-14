@@ -29,7 +29,7 @@ We can use continous delivery tool like ArgoCD or FluxCD to deploy the helm char
 ## Requirements
 
 * Kubernetes >= 1.14
-* [Helm][] >= 2.17.0
+* [Helm][] >= 3.0
 * Minimum cluster requirements include the following to run this chart with
 default settings. All of these settings are configurable.
   * Three Kubernetes nodes to respect the default "hard" affinity settings
@@ -41,8 +41,9 @@ default settings. All of these settings are configurable.
 
 * Install it:
   1. Clone this repository.
-  2. cd elastic-search-cluster
-  3. with Helm 3: `helm install elasticsearch-picnic .`
+  2. export KUBECONFIG= <path_of_kubeconfig_file>
+  3. cd elastic-search-cluster
+  4. with Helm 3: `helm install elasticsearch-picnic .`
 
 Below is the output of the deployed chart:
 
