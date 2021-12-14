@@ -1,16 +1,13 @@
 # Elasticsearch Cluster Helm Chart
 
 
-This Helm chart is a lightweight way to configure and run our official
-[Elasticsearch Docker image][].
+This Helm chart is a way to configure and run Elastic Search Cluster. We can also use Elastic Cloud on Kubernetes which is based on Operator pattern and is Elastic recommended way to deploy Elasticsearch. 
 
 
 - [Requirements](#requirements)
 - [Installing](#installing)
   - [Install released version using Helm repository](#install-released-version-using-helm-repository)
-  - [Install development version using main branch](#install-development-version-using-main-branch)
-- [Contributing](#contributing)
-
+- [Configuration](#configuration)
 ## Requirements
 
 * Kubernetes >= 1.14
@@ -22,21 +19,12 @@ default settings. All of these settings are configurable.
 
 ## Installing
 
-### Install released version using Helm repository
-
-* Add the Elastic Helm charts repo:
-`helm repo add elastic https://helm.elastic.co`
+### Install released version using Helm command:
 
 * Install it:
-  - with Helm 3: `helm install elasticsearch-picnic .`
-
-### Install development version using main branch
-
-* Clone the git repo: `git clone git@github.com:elastic/helm-charts.git`
-
-* Install it:
-  - with Helm 3: `helm install elasticsearch ./helm-charts/elasticsearch --set imageTag=8.0.0-SNAPSHOT`
-  - with Helm 2 (deprecated): `helm install --name elasticsearch ./helm-charts/elasticsearch --set imageTag=8.0.0-SNAPSHOT`
+  1. Clone this repository.
+  2. cd elastic-search-cluster
+  3. with Helm 3: `helm install elasticsearch-picnic .`
 
 ## Configuration
 
